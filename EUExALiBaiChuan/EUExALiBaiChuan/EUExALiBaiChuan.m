@@ -118,7 +118,7 @@ NSMutableDictionary  *taoKeParams;
     TaeWebViewUISettings *viewSettings =[self getWebViewSetting];
     ALBBTradePage *page=[ALBBTradePage myCartsPage];
     ALBBTradeTaokeParams *taoKeParams = nil;
-     [_tradeService  show:[EUtility brwCtrl:self.meBrwView].navigationController isNeedPush:YES webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
+     [_tradeService  show:[EUtility brwCtrl:self.meBrwView] isNeedPush:NO webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
 }
 //打开订单列表页面
 -(void)openMyOrdersPage:(NSMutableArray*)inArguments{
@@ -127,7 +127,7 @@ NSMutableDictionary  *taoKeParams;
     //@param isAllOrder  是否显示全部订单. 传YES时, 显示全部订单; 传NO时, 显示ISV的订单.
     ALBBTradePage *page=[ALBBTradePage  myOrdersPage:0 isAllOrder:YES];
     ALBBTradeTaokeParams *taoKeParams = nil;//[self getTaoKeParams];
-    [_tradeService  show:[EUtility brwCtrl:self.meBrwView].navigationController isNeedPush:YES webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
+    [_tradeService  show:[EUtility brwCtrl:self.meBrwView] isNeedPush:NO webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
 }
 //打开商品真实ID对应的详情页面
 -(void)openItemDetailPageById:(NSMutableArray*)inArguments{
@@ -150,7 +150,7 @@ NSMutableDictionary  *taoKeParams;
     ALBBTradeTaokeParams *taoKeParams = taoKeParamsDataTmp;
     
     ALBBTradePage *page=[ALBBTradePage itemDetailPage:[NSString stringWithFormat:@"%@",realitemId] params:params];
-    [_tradeService  show:[EUtility brwCtrl:self.meBrwView].navigationController isNeedPush:YES webViewUISettings:nil page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
+    [_tradeService  show:[EUtility brwCtrl:self.meBrwView] isNeedPush:NO webViewUISettings:nil page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
 }
 //通过URL打开指定商品页面
 -(void)openItemDetailPageByURL:(NSMutableArray*)inArguments{
@@ -165,7 +165,7 @@ NSMutableDictionary  *taoKeParams;
     TaeWebViewUISettings *viewSettings =[self getWebViewSetting];
     ALBBTradePage *page=[ALBBTradePage page:url];
     ALBBTradeTaokeParams *taoKeParams = taoKeParamsDataTmp;
-    [_tradeService  show:[EUtility brwCtrl:self.meBrwView].navigationController isNeedPush:YES webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
+    [_tradeService  show:[EUtility brwCtrl:self.meBrwView] isNeedPush:NO webViewUISettings:viewSettings page:page taoKeParams:taoKeParams tradeProcessSuccessCallback:_onTradeSuccess tradeProcessFailedCallback:_onTradeFailure];
 }
 
 -( TaeWebViewUISettings *)getWebViewSetting{
