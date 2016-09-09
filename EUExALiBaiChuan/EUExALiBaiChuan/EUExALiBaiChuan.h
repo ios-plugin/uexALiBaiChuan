@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EUExBase.h"
+#import <AppCanKit/AppCanKit.h>
 #import <ALBBLoginSDK/ALBBLoginService.h>
 @interface EUExALiBaiChuan : EUExBase
 @property(nonatomic, strong) loginSuccessCallback loginSuccessCallback;
