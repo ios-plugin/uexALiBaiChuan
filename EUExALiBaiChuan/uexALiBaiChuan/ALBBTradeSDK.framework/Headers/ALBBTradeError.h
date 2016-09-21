@@ -22,7 +22,9 @@ typedef NS_ENUM (NSUInteger, ALBBTradeError) {
     /** itemId无效 */
     ALBBTradeErrorInvalidItemID = 3004,
     /** page url为空 */
-    ALBBTradeErrorNullPageURL   = 3005
+    ALBBTradeErrorNullPageURL   = 3005,
+    /** shopId无效 */
+    ALBBTradeErrorInvalidShopID = 3006,
 };
 
 extern NSString * const ALBBTradeErrorDomain;

@@ -20,8 +20,8 @@
 @property (nonatomic, strong) id<ALBBTradeService> tradeService;
 @property (nonatomic, strong) tradeProcessFailedCallback onTradeFailure;
 @property (nonatomic, strong) tradeProcessSuccessCallback onTradeSuccess;
-@property (nonatomic, strong) ACJSFunctionRef *funcLogin;
-@property (nonatomic, strong) ACJSFunctionRef *funcLogout;
+//@property (nonatomic, strong) ACJSFunctionRef *funcLogin;
+//@property (nonatomic, strong) ACJSFunctionRef *funcLogout;
 //@property (nonatomic, strong) addCartCacelledCallback onCartCancel;
 //@property (nonatomic, strong) addCartSuccessCallback onCartSuccess;
 
@@ -53,25 +53,8 @@ NSMutableDictionary  *taoKeParams;
         [func executeWithArguments:ACArgsPack(@(1),@(error.code))];
         NSLog(@"init failure, %@", error);
     }];
-    [ALBBService(ALBBLoginService) setSessionStateChangedHandler:^(TaeSession *session) {
-        if([session isLogin]){//未登录变为已登录
-            NSLog(@"[SessionStateChanged]:用户Login");
-            NSDictionary *dic = @{@"isLogin":@0};
-            [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
-            [self.funcLogin executeWithArguments:ACArgsPack(@(0))];
-            [self.funcLogout executeWithArguments:ACArgsPack(@(1))];
     
-        }else{//已登录变为未登录
-            NSLog(@"[SessionStateChanged]:用户Logout");
-            NSDictionary *dic = @{@"isLogin":@1};
-            [self callBackJsonWithFunction:@"cbLogout" parameter:dic];
-            [self.funcLogin executeWithArguments:ACArgsPack(@(1))];
-            [self.funcLogout executeWithArguments:ACArgsPack(@(0))];
-
-        }
-    }];
-    self.funcLogin = nil;
-    self.funcLogout = nil;
+    
     _tradeService=ALBBService(ALBBTradeService);
      //__weak typeof(self) Myself = self;
     _onTradeSuccess=^(ALBBTradeResult *tradeProcessResult){
@@ -88,13 +71,18 @@ NSMutableDictionary  *taoKeParams;
 }
 -(void)login:(NSMutableArray*)inArguments{
     ACArgsUnpack(ACJSFunctionRef*func) = inArguments;
-    self.funcLogin = func;
+    //self.funcLogin = func;
     if(![[TaeSession sharedInstance] isLogin]){
-        [ALBBService(ALBBLoginService) showLogin:[self.webViewEngine viewController] successCallback:_loginSuccessCallback failedCallback:_loginFailedCallback];
-    }else{
-        NSDictionary *dic = @{@"isLogin":@0};
-        [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
-        [self.funcLogin executeWithArguments:ACArgsPack(@(0))];
+        id <ALBBLoginService> loginService = [[ALBBSDK sharedInstance] getService:@protocol(ALBBLoginService)];
+        [loginService showLogin:[self.webViewEngine viewController] successCallback:^(TaeSession *session) {
+            NSDictionary *dic = @{@"isLogin":@0};
+            [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
+            [func executeWithArguments:ACArgsPack(@(0))];
+        } failedCallback:^(NSError *error){
+            NSDictionary *dic = @{@"isLogin":@1};
+            [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
+            [func executeWithArguments:ACArgsPack(@(1))];
+        }];
     }
 
 }
@@ -114,19 +102,28 @@ NSMutableDictionary  *taoKeParams;
 }
 -(void)logout:(NSMutableArray*)inArguments{
     ACArgsUnpack(ACJSFunctionRef*func) = inArguments;
-    self.funcLogout = func;
+    //self.funcLogout = func;
     [ALBBService(ALBBLoginService) logout];
+    [ALBBService(ALBBLoginService) setSessionStateChangedHandler:^(TaeSession *session) {
+        if([session isLogin]){//未登录变为已登录
+            NSDictionary *dic = @{@"isLogin":@0};
+            [self callBackJsonWithFunction:@"cbLogout" parameter:dic];
+            [func executeWithArguments:ACArgsPack(@(1))];
+            
+        }else{//已登录变为未登录
+            NSDictionary *dic = @{@"isLogin":@1};
+            [self callBackJsonWithFunction:@"cbLogout" parameter:dic];
+            [func executeWithArguments:ACArgsPack(@(0))];
+            
+        }
+    }];
 }
 //打开购物车页面
 -(void)openMyCart:(NSMutableArray*)inArguments{
-    if(inArguments.count<1){
-        return;
-    }
-    //id info=[inArguments[0] JSONValue];
     ACArgsUnpack(NSDictionary *info) = inArguments;
-    NSString *isv_code = [info objectForKey:@"isvcode"];
-    if (isv_code != nil) {
-         [[ALBBSDK sharedInstance] setISVCode:isv_code]; //设置全局的app标识，在电商模块里等同于isv_code
+    if(info && [info objectForKey:@"isvcode"]){
+        NSString *isv_code = [info objectForKey:@"isvcode"];
+        [[ALBBSDK sharedInstance] setISVCode:isv_code]; //设置全局的app标识，在电商模块里等同于isv_code
     }
     TaeWebViewUISettings *viewSettings =[self getWebViewSetting];
     ALBBTradePage *page=[ALBBTradePage myCartsPage];

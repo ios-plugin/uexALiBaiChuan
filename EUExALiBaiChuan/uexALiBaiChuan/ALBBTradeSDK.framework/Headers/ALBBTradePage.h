@@ -70,6 +70,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)myCardCouponsPage;
 
+/**
+ *  创建店铺页面
+ *
+ *  @param shopId 店铺ID
+ *  @param params 自定义参数
+ *
+ *  @return 店铺页面
+ */
++ (instancetype)shopPage:(nonnull NSString *)shopId params:(nullable NSDictionary *)params;
+
 @end
 
 NS_ASSUME_NONNULL_END
