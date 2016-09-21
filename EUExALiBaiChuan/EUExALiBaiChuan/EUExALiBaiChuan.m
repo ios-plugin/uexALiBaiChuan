@@ -71,7 +71,6 @@ NSMutableDictionary  *taoKeParams;
 }
 -(void)login:(NSMutableArray*)inArguments{
     ACArgsUnpack(ACJSFunctionRef*func) = inArguments;
-    //self.funcLogin = func;
     if(![[TaeSession sharedInstance] isLogin]){
         id <ALBBLoginService> loginService = [[ALBBSDK sharedInstance] getService:@protocol(ALBBLoginService)];
         [loginService showLogin:[self.webViewEngine viewController] successCallback:^(TaeSession *session) {
@@ -83,6 +82,10 @@ NSMutableDictionary  *taoKeParams;
             [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
             [func executeWithArguments:ACArgsPack(@(1))];
         }];
+    }else{
+        NSDictionary *dic = @{@"isLogin":@0};
+        [self callBackJsonWithFunction:@"cbLogin" parameter:dic];
+        [func executeWithArguments:ACArgsPack(@(0))];
     }
 
 }
@@ -102,8 +105,15 @@ NSMutableDictionary  *taoKeParams;
 }
 -(void)logout:(NSMutableArray*)inArguments{
     ACArgsUnpack(ACJSFunctionRef*func) = inArguments;
-    //self.funcLogout = func;
-    [ALBBService(ALBBLoginService) logout];
+    if([[TaeSession sharedInstance] isLogin]){
+        [ALBBService(ALBBLoginService) logout];
+    }else{
+        NSDictionary *dic = @{@"isLogin":@1};
+        [self callBackJsonWithFunction:@"cbLogout" parameter:dic];
+        [func executeWithArguments:ACArgsPack(@(0))];
+ 
+    }
+    
     [ALBBService(ALBBLoginService) setSessionStateChangedHandler:^(TaeSession *session) {
         if([session isLogin]){//未登录变为已登录
             NSDictionary *dic = @{@"isLogin":@0};
