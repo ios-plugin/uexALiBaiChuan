@@ -19,6 +19,19 @@
 		09C8E0121CE470C2004A92B3 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C8E0061CE470C2004A92B3 /* UTDID.framework */; };
 		09C8E0131CE470C2004A92B3 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C8E0071CE470C2004A92B3 /* UTMini.framework */; };
 		09C8E0351CE472F0004A92B3 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C8E0341CE472F0004A92B3 /* ZipArchive.framework */; };
+		21051BFF1D829FAF002DFE82 /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21051BFE1D829FAF002DFE82 /* AppCanKit.framework */; };
+		215A72F91D922C4200F58AF9 /* ALBBFullSecurityGuard.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8DFFC1CE470C2004A92B3 /* ALBBFullSecurityGuard.framework */; };
+		215A72FA1D922C4200F58AF9 /* ALBBLoginSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8DFFD1CE470C2004A92B3 /* ALBBLoginSDK.framework */; };
+		215A72FB1D922C4200F58AF9 /* ALBBSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8DFFE1CE470C2004A92B3 /* ALBBSDK.framework */; };
+		215A72FC1D922C4200F58AF9 /* ALBBTradeSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8DFFF1CE470C2004A92B3 /* ALBBTradeSDK.framework */; };
+		215A72FD1D922C4200F58AF9 /* AlipaySDK.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0001CE470C2004A92B3 /* AlipaySDK.bundle */; };
+		215A72FE1D922C4200F58AF9 /* AlipaySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0011CE470C2004A92B3 /* AlipaySDK.framework */; };
+		215A72FF1D922C4200F58AF9 /* baichuan.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0021CE470C2004A92B3 /* baichuan.bundle */; };
+		215A73001D922C4200F58AF9 /* SecurityGuardSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0031CE470C2004A92B3 /* SecurityGuardSDK.framework */; };
+		215A73011D922C4200F58AF9 /* SGMain.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0041CE470C2004A92B3 /* SGMain.framework */; };
+		215A73021D922C4200F58AF9 /* TBAppLinkSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0051CE470C2004A92B3 /* TBAppLinkSDK.framework */; };
+		215A73031D922C4200F58AF9 /* UTDID.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0061CE470C2004A92B3 /* UTDID.framework */; };
+		215A73041D922C4200F58AF9 /* UTMini.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09C8E0071CE470C2004A92B3 /* UTMini.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +41,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				215A72F91D922C4200F58AF9 /* ALBBFullSecurityGuard.framework in CopyFiles */,
+				215A72FA1D922C4200F58AF9 /* ALBBLoginSDK.framework in CopyFiles */,
+				215A72FB1D922C4200F58AF9 /* ALBBSDK.framework in CopyFiles */,
+				215A72FC1D922C4200F58AF9 /* ALBBTradeSDK.framework in CopyFiles */,
+				215A72FD1D922C4200F58AF9 /* AlipaySDK.bundle in CopyFiles */,
+				215A72FE1D922C4200F58AF9 /* AlipaySDK.framework in CopyFiles */,
+				215A72FF1D922C4200F58AF9 /* baichuan.bundle in CopyFiles */,
+				215A73001D922C4200F58AF9 /* SecurityGuardSDK.framework in CopyFiles */,
+				215A73011D922C4200F58AF9 /* SGMain.framework in CopyFiles */,
+				215A73021D922C4200F58AF9 /* TBAppLinkSDK.framework in CopyFiles */,
+				215A73031D922C4200F58AF9 /* UTDID.framework in CopyFiles */,
+				215A73041D922C4200F58AF9 /* UTMini.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,19 +63,9 @@
 		097D58D01CE429A3003D0177 /* EUExALiBaiChuan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExALiBaiChuan.h; sourceTree = "<group>"; };
 		097D58D21CE429A3003D0177 /* EUExALiBaiChuan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExALiBaiChuan.m; sourceTree = "<group>"; };
 		097D590E1CE42FC7003D0177 /* ACEBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEBaseViewController.h; sourceTree = "<group>"; };
-		097D590F1CE42FC7003D0177 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
 		097D59101CE42FC7003D0177 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
 		097D59111CE42FC7003D0177 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		097D59121CE42FC7003D0177 /* WidgetOneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOneDelegate.h; sourceTree = "<group>"; };
-		097D59141CE42FC7003D0177 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		097D59151CE42FC7003D0177 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
-		097D59161CE42FC7003D0177 /* MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Digest.h; sourceTree = "<group>"; };
-		097D59171CE42FC7003D0177 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		097D59181CE42FC7003D0177 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		097D59191CE42FC7003D0177 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		097D591A1CE42FC7003D0177 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		097D591B1CE42FC7003D0177 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		097D591C1CE42FC7003D0177 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		09C8DFFC1CE470C2004A92B3 /* ALBBFullSecurityGuard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALBBFullSecurityGuard.framework; sourceTree = "<group>"; };
 		09C8DFFD1CE470C2004A92B3 /* ALBBLoginSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALBBLoginSDK.framework; sourceTree = "<group>"; };
 		09C8DFFE1CE470C2004A92B3 /* ALBBSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALBBSDK.framework; sourceTree = "<group>"; };
@@ -65,6 +80,7 @@
 		09C8E0071CE470C2004A92B3 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		09C8E0081CE470C2004A92B3 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		09C8E0341CE472F0004A92B3 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZipArchive.framework; sourceTree = "<group>"; };
+		21051BFE1D829FAF002DFE82 /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,7 @@
 				09C8E00F1CE470C2004A92B3 /* SecurityGuardSDK.framework in Frameworks */,
 				09C8E00A1CE470C2004A92B3 /* ALBBFullSecurityGuard.framework in Frameworks */,
 				09C8E00C1CE470C2004A92B3 /* ALBBSDK.framework in Frameworks */,
+				21051BFF1D829FAF002DFE82 /* AppCanKit.framework in Frameworks */,
 				09C8E0121CE470C2004A92B3 /* UTDID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +137,6 @@
 			children = (
 				09C8DFFB1CE470C2004A92B3 /* OneSDK */,
 				097D590D1CE42FC7003D0177 /* engineHeader */,
-				097D59131CE42FC7003D0177 /* JSON */,
 			);
 			path = sourceCode;
 			sourceTree = "<group>";
@@ -128,29 +144,13 @@
 		097D590D1CE42FC7003D0177 /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
+				21051BFE1D829FAF002DFE82 /* AppCanKit.framework */,
 				097D590E1CE42FC7003D0177 /* ACEBaseViewController.h */,
-				097D590F1CE42FC7003D0177 /* EUExBase.h */,
 				097D59101CE42FC7003D0177 /* EUExBaseDefine.h */,
 				097D59111CE42FC7003D0177 /* EUtility.h */,
 				097D59121CE42FC7003D0177 /* WidgetOneDelegate.h */,
 			);
 			path = engineHeader;
-			sourceTree = "<group>";
-		};
-		097D59131CE42FC7003D0177 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				097D59141CE42FC7003D0177 /* JSON.h */,
-				097D59151CE42FC7003D0177 /* JSONParser.h */,
-				097D59161CE42FC7003D0177 /* MD5Digest.h */,
-				097D59171CE42FC7003D0177 /* NSObject+SBJSON.h */,
-				097D59181CE42FC7003D0177 /* NSString+SBJSON.h */,
-				097D59191CE42FC7003D0177 /* SBJSON.h */,
-				097D591A1CE42FC7003D0177 /* SBJsonBase.h */,
-				097D591B1CE42FC7003D0177 /* SBJsonParser.h */,
-				097D591C1CE42FC7003D0177 /* SBJsonWriter.h */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		09C8DFFB1CE470C2004A92B3 /* OneSDK */ = {
@@ -324,6 +324,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExALiBaiChuan/sourceCode/OneSDK",
+					"$(PROJECT_DIR)/EUExALiBaiChuan/sourceCode/engineHeader",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexALiBaiChuan;
@@ -338,6 +339,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExALiBaiChuan/sourceCode/OneSDK",
+					"$(PROJECT_DIR)/EUExALiBaiChuan/sourceCode/engineHeader",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexALiBaiChuan;

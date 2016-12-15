@@ -15,6 +15,11 @@ typedef void (^addCartCacelledCallback)();
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM (NSUInteger, ALBBThemeType) {
+    ALBBThemeTypeDaytime,   //白天
+    ALBBThemeTypeEvening  //强制跳手淘
+} ;
+
 /** 购物车服务 */
 @protocol ALBBCartService <ALBBTradeService>
 /**
@@ -65,6 +70,29 @@ NS_ASSUME_NONNULL_BEGIN
    addCartSuccessCallback:(nullable void (^)())onSuccess
   addCartCacelledCallback:(nullable void (^)())onCancel;
 
+/**
+   获取 添加商品到购物车 的url
+ @param itemId                  商品ID（支持混淆和非混淆）
+ @param themeType               主题类型（0白天，1晚上）
+ @param themeType
+ */
+-(NSString*)addItem2CartUrlWithItemId:(NSString *)itemId
+                            themeType:(ALBBThemeType)themeType;
+
+/**
+ 获取 添加淘客商品到购物车 的url
+ @param itemId                  商品ID（支持混淆和非混淆）
+ @param themeType               主题类型（0白天，1晚上）
+ @param taoKeParams             淘客参数
+ */
+-(NSString*)addTaokeItem2CartUrlWithItemId:(NSString *)itemId
+                                themeType:(ALBBThemeType)themeType
+                               taoKeParams:(nullable ALBBTradeTaokeParams *)taoKeParams;
+/**
+ 检查是否添加购物车成功
+ @param url 传入拦截到的url
+ */
+-(BOOL)checkIsAddItemToCartSuccess:(NSString*)url;
 @end
 
 NS_ASSUME_NONNULL_END
